@@ -17,7 +17,7 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
-  const data = new ResData("success", 200, "Hello");
+  const data = new ResData("success", 200, "Assalomu alaykum hush kelibsizlar");
   res.status(data.status).json(data);
 });
 
