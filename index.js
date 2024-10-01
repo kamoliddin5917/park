@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json("Hello World!");
+  res.json({ message: "success", status: 200, data: "Assalomu alaykum" });
 });
 
 app.listen(Number(PORT), () => {
