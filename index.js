@@ -10,14 +10,14 @@ class ResData {
   }
 }
 
-const PORT = process.env.PORT;
-
+let PORT = process.env.PORT;
+PORT = +PORT;
 const app = express();
 
 app.use(cors());
 
 app.get("/", (req, res) => {
-  const data = new ResData("success", 200, "Assalomu alaykum");
+  const data = new ResData("success", 200, "Hello");
   res.status(data.status).json(data);
 });
 
@@ -29,6 +29,6 @@ app.get("/user", (req, res) => {
   });
 });
 
-app.listen(Number(PORT), () => {
+app.listen(PORT, () => {
   console.log("http://localhost:" + PORT);
 });
