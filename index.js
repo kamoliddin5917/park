@@ -2,6 +2,14 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+class ResData {
+  constructor(message, status, data) {
+    this.message = message;
+    this.status = status;
+    this.data = data;
+  }
+}
+
 const PORT = process.env.PORT;
 
 const app = express();
@@ -9,7 +17,8 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json({ message: "success", status: 200, data: "Assalomu alaykum" });
+  const data = new ResData("success", 200, "Assalomu alaykum");
+  res.status(data.status).json(data);
 });
 
 app.get("/user", (req, res) => {
