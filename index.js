@@ -12,6 +12,14 @@ app.get("/", (req, res) => {
   res.json({ message: "success", status: 200, data: "Assalomu alaykum" });
 });
 
+app.get("/user", (req, res) => {
+  res.json({
+    message: "success",
+    status: 200,
+    data: [{ id: 1, name: "Nitro7", login: "nitro7", password: "123456" }],
+  });
+});
+
 app.listen(Number(PORT), () => {
   console.log("http://localhost:" + PORT);
 });
